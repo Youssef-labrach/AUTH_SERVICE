@@ -17,9 +17,7 @@ public class User {
     private Long id;
     private String email;
     private String password;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private List<Document> documents;
+
     public Long getId() {
         return id;
     }
@@ -44,11 +42,5 @@ public class User {
         this.password = password;
     }
 
-    public List<Document> getDocuments() {
-        return documents;
-    }
 
-    public void setDocuments(List<Document> documents) {
-        this.documents = documents;
-    }
 }
